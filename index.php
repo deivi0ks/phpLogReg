@@ -1,7 +1,7 @@
 <?php
 
-include "configs/mysqlConfig.php";
-include "configs/pageConfig.php";
+include_once "configs/mysqlConfig.php";
+include_once "configs/pageConfig.php";
 
 session_start();
 

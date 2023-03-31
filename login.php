@@ -1,7 +1,7 @@
 <?php
 
-include "configs/mysqlConfig.php";
-include "configs/pageConfig.php";
+include_once "configs/mysqlConfig.php";
+include_once "configs/pageConfig.php";
 
 session_start();
 
@@ -17,7 +17,7 @@ if(isset($_POST['loginUser']))
   } else {
     $userSql = "SELECT `username`, `password` FROM `users` WHERE `username` = ? AND `password` = ?";
     $query = $dbh->prepare($userSql);
-    $query->execute([$username, $password]);
+    $query->execute([$username, $hashpasword]);
 
     if($query->rowCount() > 0)
     {
